@@ -1,0 +1,5 @@
+/sevipomodoro
+/bin/
+*.out
+coverage.html
+.DS_Store
