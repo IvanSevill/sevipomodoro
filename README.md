@@ -2,29 +2,7 @@
 
 A focused, keyboard-first Pomodoro terminal application built with Go, Bubble Tea, and Lip Gloss.
 
-```text
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃                           FOCUS  /  PAUSED                           ┃
-┃                              Open-ended                              ┃
-┃                                                                      ┃
-┃                       ┏━┓  ┏━╸       ┏━┓  ┏━┓                        ┃
-┃                         ┃  ┃     ▪   ┃ ┃  ┃ ┃                        ┃
-┃                       ┏━┛  ┗━┓       ┃ ┃  ┃ ┃                        ┃
-┃                       ┃      ┃   ▪   ┃ ┃  ┃ ┃                        ┃
-┃                       ┗━╸  ┗━┛       ┗━┛  ┗━┛                        ┃
-┃                                                                      ┃
-┃   ────────────────────────────────────────────────────────────────   ┃
-┃                              0% elapsed                              ┃
-┃                                                                      ┃
-┃                    0 sessions  ·  0h 00m focused                     ┃
-┃                                                                      ┃
-┃                                                                      ┃
-┃             space/enter start/pause · r reset · s/n skip             ┃
-┃                 t/, settings · q quit · ctrl+c exit                  ┃
-┃                                                                      ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
-```
+![Sevi Pomodoro running a focus session, previewing themes, and skipping to a break](docs/assets/demo.gif)
 
 ## Features
 
@@ -136,6 +114,8 @@ go build ./...
 ```
 
 The timer state machine lives in `internal/pomodoro` and accepts explicit timestamps, keeping transitions independently testable from Bubble Tea rendering.
+
+Regenerate the README demo with `make build && vhs docs/demo.tape`, which needs [VHS](https://github.com/charmbracelet/vhs).
 
 Regenerate deterministic view snapshots with `go test ./internal/tui -run TestViewGolden -update`, inspect them, then rerun `go test ./...`. Domain and settings regression tests use injected timestamps, not sleeps. Filesystem tests use temporary directories; isolate `XDG_CONFIG_HOME` for manual or PTY runs.
 
