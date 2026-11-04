@@ -43,7 +43,15 @@ Defaults are 25 minutes of focus, a 5-minute short break, a 15-minute long break
 - Go 1.24 or newer
 - A terminal with color support
 
-## Run
+## Install
+
+```sh
+go install github.com/ivansevill/sevipomodoro/cmd/sevipomodoro@latest
+```
+
+This places `sevipomodoro` in your Go bin directory.
+
+## Run from source
 
 Clone the repository, then from its directory:
 
