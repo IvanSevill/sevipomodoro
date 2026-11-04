@@ -27,7 +27,19 @@ Defaults are 25 minutes of focus, a 5-minute short break, a 15-minute long break
 go install github.com/ivansevill/sevipomodoro/cmd/sevipomodoro@latest
 ```
 
-This places `sevipomodoro` in your Go bin directory.
+Then start it:
+
+```sh
+sevipomodoro
+```
+
+If your shell reports `command not found`, Go's bin directory is not on your `PATH`. On Linux or macOS, add this line to `~/.zshrc` or `~/.bashrc`, then open a new terminal:
+
+```sh
+export PATH="$(go env GOPATH)/bin:$PATH"
+```
+
+To update later, run the same `go install` command again.
 
 ## Run from source
 
